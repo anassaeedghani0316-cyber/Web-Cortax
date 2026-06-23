@@ -1,0 +1,2 @@
+ALTER TABLE public.transactions ADD COLUMN IF NOT EXISTS document_id UUID REFERENCES public.financial_documents(id) ON DELETE CASCADE;
+CREATE INDEX IF NOT EXISTS idx_transactions_document_id ON public.transactions(document_id);
